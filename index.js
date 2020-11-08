@@ -1,8 +1,11 @@
 const express = require('express')
 const database = require('./src/database/connection')
 const router = require('./src/routes/routes')
-const app = express()
+const cors = require('cors')
 
+
+app.use(cors())
+const app = express()
 app.use(express.json())
 app.use(router)
 
